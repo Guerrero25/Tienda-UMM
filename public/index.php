@@ -1,4 +1,4 @@
-<?php 
+<?php
 chdir(dirname(__DIR__));
 
 define("SYS_PATH", "lib/");
@@ -15,13 +15,22 @@ if (isset($url[0])) {
 if (isset($url[1])) {
 	$method = $url[1];
 }
+if(isset($url[2])){
+	if($url[1] != ''){
+		$params = $url[2];
+	}
+}
 
 if (file_exists(APP_PATH."controllers/".$controllerName.".php")) {
 	require APP_PATH."controllers/".$controllerName.".php";
 	$controller = new $controllerName();
 	if (isset($method)) {
 		if (method_exists($controllerName, $method)) {
-			$controller->$method();
+			if (isset($params)) {
+				$controller->$method($params);
+			}else{
+				$controller->$method();
+			}
 		}else{
 			echo "Error no existe el metodo";
 		}
@@ -30,12 +39,4 @@ if (file_exists(APP_PATH."controllers/".$controllerName.".php")) {
 }else{
 	echo "Error la url no existe";
 }
-
-
-
-
-
-
-
-
 ?>

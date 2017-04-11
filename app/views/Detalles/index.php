@@ -1,13 +1,10 @@
 <!doctype html>
 <html>
 <head>
-	<title></title>
+	<title>UMM TOD</title>
 </head>
 <body>
-	<?php while ($detalles->fetch_row()) { 
-		
-		echo $detalles;	
-	
-	} ?>
+	<?php var_dump($d)?>
+
 </body>
 </html>
