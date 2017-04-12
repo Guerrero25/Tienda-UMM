@@ -13,23 +13,27 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-					<a class="btn btn-info" href="#">Conocenos</a>
-					<a class="btn btn-info" href="#">Registrate</a>
+					<a class="btn btn-info btn-lg" href="#">Conocenos</a>
+					<a class="btn btn-info btn-lg" href="#">Registrate</a>
 				</div>
 
-				<div class="col-md-4 col-xs-12 middle-xs">
-					<h2 class="sesion">Iniciar Sesion</h2>
-          <form action="#" class="inicio_sesion" role="form" id = "Sesion" name="Sesion" method="POST">
-            <div class="form-group">
-              <label for="email">Correo Electrónico</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Correo Eléctronico">
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" name="password" class="form-control" placeholder="Contraseña">
-            </div>
-						<button type="submit" class="btn btn-info">Iniciar Sesión</button>
-					</form>
+				<div class="singin col-md-4 col-xs-12 middle-xs">
+					<div class="sesiontitle">
+						<h2>Iniciar Sesion</h2>
+					</div>
+					<div class="formulario">
+	          <form action="#" class="form-singin" role="form" id = "Sesion" name="Sesion" method="POST">
+	            <div class="form-group">
+	              <label for="email">Correo Electrónico</label>
+	              <input type="email" name="email" id="email" class="form-control" placeholder="Correo Eléctronico">
+	            </div>
+	            <div class="form-group">
+	              <label for="password">Contraseña</label>
+	              <input type="password" name="password" class="form-control" placeholder="Contraseña">
+	            </div>
+							<button type="submit" class="btn btn-info btn-lg btn-block">Iniciar Sesión</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

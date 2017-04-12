@@ -1,5 +1,5 @@
 .logo_menu{
-	background-color: #d84c3d;
+	background-color: #F2836B;
 	color: #fff;
 }
 
@@ -16,4 +16,8 @@
 .logo_menu .menu a:hover{
 	border-bottom: 4px #fff solid;
 	padding-bottom: 27px;
+}
+
+.resaltar{
+	background-color: #63A69F;
 }

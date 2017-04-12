@@ -1,3 +1,12 @@
+.sesiontitle{
+	text-align: center;
+
+}
+
+.singin{
+	background-color: #F2E1AC;
+	color: #fff;
+}
 
 .informacion_img img{
 	width: 100%;
@@ -13,29 +22,17 @@
 	padding: 1em 1em;
 	color: white;
 	text-decoration: none;
-	background-color: #d84c3d;
 }
 
-.sesion{
-	color: #000;
+.formulario{
+	padding: 20px 20px;
 	vertical-align: middle;
-	text-align: center;
-	padding-top: 2em;
-}
-
-.inicio_sesion{
-	background-color: #d84c3d;
-	vertical-align: middle;
-	margin-top: 3em;
-	border-radius: 10%;
 }
 
 form{
-	padding: 20px 20px;
+
 }
 
 .main{
-	padding-top: 10px;
-	padding-left: 0;
-	padding-right: 0;
+	padding-top: 15px;
 }

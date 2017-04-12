@@ -23,7 +23,7 @@
   						<a href="<?php URL."public/Main/index"; ?>">Inicio</a>
   						<a href="<?php URL."public/Detalle/index"; ?>">Productos</a>
   						<a href="#">Servicios</a>
-  						<a href="#">Registrate</a>
+  						<a href="#" class="resaltar">Registrate</a>
   						<a href="#">Acerca de</a>
   					</nav>
   				</div>
