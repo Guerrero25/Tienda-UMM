@@ -1,0 +1,19 @@
+.logo_menu{
+	background-color: #d84c3d;
+	color: #fff;
+}
+
+.logo_menu .menu a{
+	display: inline-block;
+}
+
+.logo_menu .menu a{
+	text-decoration: none;
+	padding: 31px 15px;
+	color: #fff;
+}
+
+.logo_menu .menu a:hover{
+	border-bottom: 4px #fff solid;
+	padding-bottom: 27px;
+}

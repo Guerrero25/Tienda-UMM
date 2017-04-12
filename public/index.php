@@ -1,9 +1,5 @@
 <?php
-chdir(dirname(__DIR__));
-
-define("SYS_PATH", "lib/");
-define("APP_PATH", "app/");
-
+require "../lib/config.php";
 require SYS_PATH."Autoloader.php";
 
 $url = isset($_GET['url']) ?$_GET['url']:"home";

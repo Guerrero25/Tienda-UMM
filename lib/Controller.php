@@ -1,10 +1,8 @@
 <?php
-/**
- *
- */
 class Controller{
 
   function __construct(){
+    $this->view = new Views();
     $this->loadClassmodels();
   }
 
@@ -18,6 +16,4 @@ class Controller{
   }
 
 }
-
-
- ?>
+?>

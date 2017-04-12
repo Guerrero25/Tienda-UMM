@@ -4,7 +4,7 @@
 	<title>UMM TOD</title>
 </head>
 <body>
-	<?php var_dump($d)?>
+	<h1>Hola soy vista detalles</h1>
 
 </body>
 </html>
