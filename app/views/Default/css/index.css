@@ -1,11 +1,17 @@
 .sesiontitle{
 	text-align: center;
-
+	color: #63A69F;
+	display: block;
 }
 
 .singin{
+	display: flex;
+	align-items: center;
 	background-color: #F2E1AC;
-	color: #fff;
+	color: #63A69F;
+	-webkit-box-shadow: 4px 3px 17px -3px rgba(0,0,0,0.7);
+	-moz-box-shadow: 4px 3px 17px -3px rgba(0,0,0,0.7);
+	box-shadow: 4px 3px 17px -3px rgba(0,0,0,0.7);
 }
 
 .informacion_img img{
@@ -25,12 +31,10 @@
 }
 
 .formulario{
+	display: block;
 	padding: 20px 20px;
 	vertical-align: middle;
-}
-
-form{
-
+	color: #63A69F;
 }
 
 .main{

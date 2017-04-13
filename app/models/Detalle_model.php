@@ -1,5 +1,5 @@
 <?php
-	class Detalle_model extends Model{
+	class Detalle_model{
 		protected $table = "detalles";
 		private $descripcion;
 		private $nombre;

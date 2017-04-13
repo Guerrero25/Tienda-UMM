@@ -4,6 +4,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>Un Millón de Momentos</title>
+
+    <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/jquery-321.js" type="text/javascript"></script>
+    <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/jquery.validate.js" type="text/javascript"></script>
+    <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/funciones.js" type="text/javascript"></script>
+
   	<link rel="stylesheet" type="text/css" href="<?php echo URL.APP_PATH.'views/'.DFT;?>css/estilos.css">
     <link rel="stylesheet" type="text/css" href="<?php echo URL.APP_PATH.'views/'.DFT;?>css/index.css">
   	<link rel="stylesheet" type="text/css" href="<?php echo URL.APP_PATH.'views/'.DFT;?>css/vendor/normalize.css">
@@ -20,8 +25,8 @@
   				<div class="row middle-xs">
   					<div class="logo col-sm-4 star-sm center-xs col-xs-12"><h2>Un Milllón de Momentos</h2></div>
   					<nav class="menu col-sm-8 end-sm center-xs col-xs-12">
-  						<a href="<?php URL."public/Main/index"; ?>">Inicio</a>
-  						<a href="<?php URL."public/Detalle/index"; ?>">Productos</a>
+  						<a href="<?php echo URL."public/Main/index"; ?>">Inicio</a>
+  						<a href="<?php echo URL."public/Detalle/index"; ?>">Productos</a>
   						<a href="#">Servicios</a>
   						<a href="#" class="resaltar">Registrate</a>
   						<a href="#">Acerca de</a>
