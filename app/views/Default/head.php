@@ -25,11 +25,16 @@
   				<div class="row middle-xs">
   					<div class="logo col-sm-4 star-sm center-xs col-xs-12"><h2>Un Milllón de Momentos</h2></div>
   					<nav class="menu col-sm-8 end-sm center-xs col-xs-12">
-  						<a href="<?php echo URL."public/Main/index"; ?>">Inicio</a>
+  						<a href="<?php echo isset($_SESSION['Usuario']) ?  URL."public/Principal/index" : URL."public/Main/index"; ?>">Inicio</a>
   						<a href="<?php echo URL."public/Detalle/index"; ?>">Productos</a>
   						<a href="#">Servicios</a>
-  						<a href="#" class="resaltar">Registrate</a>
+  						<?php if(!isset($_SESSION['Usuario'])){ ?>
+              <a href="#" class="resaltar">Registrate</a>
+              <?php } ?>
   						<a href="#">Acerca de</a>
+              <?php if(isset($_SESSION['Usuario'])){ ?>
+              <a href="<?php echo URL."public/User/cerrarSesion"; ?> ?>" class="resaltar">Cerrar Sesión</a>
+              <?php } ?>
   					</nav>
   				</div>
   			</div>
