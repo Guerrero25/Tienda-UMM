@@ -32,7 +32,7 @@
 		              <label for="password">Contraseña</label>
 		              <input type="password" name="password" class="form-control" placeholder="Contraseña">
 		            </div>
-								<button type="button" id="btnLogin" onclick="userLogin()" class="btn btn-info btn-lg btn-block">Iniciar Sesión</button>
+								<button type="button" id="btnLogin" class="btn btn-info btn-lg btn-block">Iniciar Sesión</button>
 							</form>
 						</div>
 					</div>
@@ -53,9 +53,9 @@
 					data:{email: email, password: password},
 					success: function(response){
 						if (response == '1') {
-							location.href = '<?php echo URL;?>public/Detalle/index';
+							location.href = '<?php echo URL;?>public/Principal/index';
 						}else{
-							alert("Usuario invalido");
+							alert(response);
 						}
 					}
 				});

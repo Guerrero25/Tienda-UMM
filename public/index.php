@@ -2,7 +2,7 @@
 require "../lib/config.php";
 require SYS_PATH."Autoloader.php";
 
-$url = isset($_GET['url']) ?$_GET['url']:"home";
+$url = isset($_GET['url']) ?$_GET['url']:"Main/index";
 $url= explode("/", $url);
 
 if (isset($url[0])) {

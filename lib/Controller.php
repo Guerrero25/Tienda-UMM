@@ -2,6 +2,7 @@
 class Controller{
 
   function __construct(){
+    Sesion::start();
     $this->view = new Views();
     $this->loadClassmodels();
   }
