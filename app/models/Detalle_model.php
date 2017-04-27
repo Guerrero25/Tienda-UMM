@@ -1,29 +1,13 @@
 <?php
-	class Detalle_model{
-		protected $table = "detalles";
-		private $descripcion;
-		private $nombre;
-		private $precio;
+	class Detalle_model extends ActiveRecord\Model{
 
-		function __construct(){
-			$this->descripcion = "Detalle para un gran amor";
-			$this->nombre = "Detalle Grande";
-			$this->precio = "55000";
+		function todos(){
+			return $this::find('all');
 		}
 
-		public function datos(){
-			$datos = array($this->descripcion, $this->nombre, $this->precio );
-			return $datos;
+		function ver($id){
+			return $this::find('first', array('id' => $id));
 		}
-
-		public function __get($atributo){
-			return $this->$atributo;
-		}
-
-		public function __set($atributo, $value){
-			$this->$atributo = $value;
-		}
-
 
 	}
 ?>

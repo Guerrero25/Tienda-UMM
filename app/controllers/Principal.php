@@ -10,7 +10,12 @@ class Principal extends Controller{
 
   public function index()
   {
-    $this->view->render($this,'principal');
+    if(isset($_SESSION['Usuario'])){
+      $this->view->render($this,'principal','');
+    }else{
+      header("Location:".URL."public/");
+    }
+
   }
 }
 

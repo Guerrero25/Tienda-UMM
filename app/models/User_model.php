@@ -2,19 +2,15 @@
 /**
  *
  */
-class User_model extends Conexion
-{
+ class User_model extends ActiveRecord\Model
+ {
 
-  function __construct()
-  {
-    parent::__construct();
-  }
 
-  function login($fields, $where)
-  {
-    return $this->db->select1($fields, 'users', $where);
-  }
-}
+   function login($correo)
+   {
+     return $this::find('first', array('email' => $correo));
+   }
+ }
 
 
  ?>

@@ -21,5 +21,4 @@ $().ready(function() {
     }
 
   });
-  $("#email").focus();
 });

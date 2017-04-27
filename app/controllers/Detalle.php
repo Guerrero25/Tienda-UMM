@@ -3,18 +3,21 @@ class Detalle extends Controller{
 
 
 	function __construct(){
-
 		parent::__construct();
 	}
 
 	public function index(){
-		$this->view->render($this,'index');
+		$response = $this->model->todos();
 
+		$this->view->render($this,'index', $response);
 	}
 
-	public function index2($params){
+	public function ver($id){
+		$response = $this->model->ver($id);
 
+		$this->view->render($this, 'ver',$response);
 	}
+
 }
 
  ?>

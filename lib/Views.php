@@ -9,7 +9,7 @@ class Views
 
   }
 
-  function render($controller, $view){
+  function render($controller, $view, $array){
     $controllers = get_class($controller);
     require APP_PATH.'views/'.DFT.'head.php';
     require APP_PATH.'views/'.$controllers.'/'.$view.'.php';

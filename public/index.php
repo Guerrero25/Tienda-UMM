@@ -1,5 +1,6 @@
 <?php
 require "../lib/config.php";
+require SYS_PATH."Conexion.php";
 require SYS_PATH."Autoloader.php";
 
 $url = isset($_GET['url']) ?$_GET['url']:"Main/index";

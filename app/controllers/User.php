@@ -10,13 +10,10 @@ class User extends Controller{
 
   public function login(){
     if (isset($_POST["email"]) && isset($_POST["password"])) {
-      $response = $this->model->login('*',"email = '".$_POST['email']."'");
-      $response = $response[0];
-      if ($response["password"] == $_POST["password"]) {
-        $this->crearSesion($response['nombre']);
-        echo "1";
-      }else{
-        echo "Usuario o contraseña incorrectos";
+      $response = $this->model->login($_POST['email']);
+      if ($response->password == $_POST["password"]) {
+        $this->crearSesion($response->nombre);
+        echo '1';
       }
     }
   }
