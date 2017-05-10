@@ -1,4 +1,4 @@
-$().ready(function() {
+$(document).ready(function() {
   $("#Sesion").validate({
     rules: {
       email: {
@@ -19,6 +19,7 @@ $().ready(function() {
         required: "<center><td colSpan='2'><font color='#CD2C24'>Ingrese una contraseña.</font></td></center>"
       }
     }
-
   });
+
+  
 });

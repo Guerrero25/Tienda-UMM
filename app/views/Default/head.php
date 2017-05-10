@@ -24,21 +24,27 @@
 
 </head>
 <body class="landing-page">
-    <nav class="navbar navbar-transparent navbar-absolute">
+    <nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
     	<div class="container">
         	<!-- Brand and toggle get grouped for better mobile display -->
         	<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-doc">
             		<span class="sr-only">Toggle navigation</span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a class="navbar-brand" href="<?php echo isset($_SESSION['Usuario']) ? URL.'public/Principal/index' : URL.'public/Main/index'; ?>">Millón de Momentos</a>
+        		<a href="<?php echo isset($_SESSION['Usuario']) ? URL.'public/Principal/index' : URL.'public/Main/index'; ?>">
+							<div class="logo-container">
+								<div class="logo">
+									<img src="<?php echo URL.APP_PATH.'views/'.DFT; ?>img/logo.png" alt="Un Millon de Momentos Logo">
+								</div>
+							</div>
+						</a>
         	</div>
 
-        	<div class="collapse navbar-collapse" id="navigation-example">
-            <ul class="nav navbar-nav">
+        	<div class="collapse navbar-collapse" id="navigation-doc">
+            <ul class="nav navbar-nav ">
     					<li><a href="<?php echo isset($_SESSION['Usuario']) ? URL.'public/Principal/index' : URL.'public/Main/index'; ?>">Inicio</a></li>
                   <?php if(isset($_SESSION['Usuario'])){ ?>
                   <li><a href="#">Perfil</a></li>
@@ -61,12 +67,12 @@
 
 		            <li>
 		                <a href="https://www.facebook.com/Un-mill%C3%B3n-de-momentos-1189791587730712/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-facebook-square"></i>Facebook!
+							<i class="fa fa-facebook-square"></i> Facebook!
 						</a>
 		            </li>
 					<li>
 		                <a href="https://www.instagram.com/unmillondemomentos/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-instagram"></i>Instagram
+							<i class="fa fa-instagram"></i> Instagram
 						</a>
 		            </li>
         		</ul>
