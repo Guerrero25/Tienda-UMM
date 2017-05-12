@@ -13,7 +13,7 @@ class Principal extends Controller{
     if(isset($_SESSION['Usuario'])){
       $this->view->render($this,'principal','');
     }else{
-      header("Location:".URL."public/");
+      header("Location:".URL);
     }
 
   }

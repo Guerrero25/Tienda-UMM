@@ -1,5 +1,5 @@
 <?php
-require "../lib/config.php";
+require "lib/config.php";
 require SYS_PATH."Conexion.php";
 require SYS_PATH."Autoloader.php";
 

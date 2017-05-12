@@ -10,7 +10,7 @@
 						<buttton class="btn btn-danger btn-raised btn-lg" data-toggle="modal" data-target= "#login">
 								Inicia Sesión.
 						</buttton>
-						<a href="#" class="btn btn-primary btn-raised btn-lg">
+						<a href="<?php echo URL.'Detalle/index'; ?>" class="btn btn-primary btn-raised btn-lg">
 								Ver Productos.
 						</a>
 					</div>
@@ -74,7 +74,7 @@
 					</div>
 	      </div>
 	      <div class="modal-footer">
-
+					<center><a href="#registro" class="btn btn-simple" data-dismiss="modal">Registrate aqui</a></center>
 	      </div>
 	    </div>
 	  </div>
@@ -86,264 +86,74 @@
 	     	<div class="row">
 	     		<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-		     			<h2 class="title text-center">Productos Destacados</h2>
+		     			<h2 class="title text-center">Ultimos Agregados</h2>
 		     		</div>
 						<div class="controls pull-rigth hidden-xs">
-							<a class="left fa fa-chevron-left btn btn-success" href="#carousel-detalles" data-slide="prev"></a>
-							<a class="right fa fa-chevron-right btn btn-success" href="#carousel-detalles" data-slide="next"></a>
+							<a class="left fa fa-chevron-left btn btn-primary" href="#carousel-detalles" data-slide="prev"></a>
+							<a class="right fa fa-chevron-right btn btn-primary" href="#carousel-detalles" data-slide="next"></a>
 						</div>
 	     		</div>
 					<!--Inicio Carusel-->
 					<div id="carousel-detalles" class="carousel slide hidden-xs" data-ride="carousel">
 
-							<!--Contenedor de los Slides-->
-							<div class="carousel-inner">
-								<div class="item"><!--Comienzo de item-->
-									<div class="row">
-										<div class="col-sm-3"><!--Inicio Detalle-->
-											<div class="col-item">
-												<div class="photo">
-													<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-												</div>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Caja Sorpresa</h5>
-															<h5 class="price-text-color">$50.000</h5>
-														</div>
-													</div>
-													<div class="separato clear-left">
-														<p class="btn-add">
-															<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-														</p>
-														<p class="btn-details">
-															<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div><!--Final detalle-->
-										<div class="col-sm-3"><!--Inicio Detalle-->
-											<div class="col-item">
-												<div class="photo">
-													<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-												</div>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Caja Sorpresa</h5>
-															<h5 class="price-text-color">$50.000</h5>
-														</div>
-													</div>
-													<div class="separato clear-left">
-														<p class="btn-add">
-															<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-														</p>
-														<p class="btn-details">
-															<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div><!--Final detalle-->
-										<div class="col-sm-3"><!--Inicio Detalle-->
-											<div class="col-item">
-												<div class="photo">
-													<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-												</div>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Caja Sorpresa</h5>
-															<h5 class="price-text-color">$50.000</h5>
-														</div>
-													</div>
-													<div class="separato clear-left">
-														<p class="btn-add">
-															<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-														</p>
-														<p class="btn-details">
-															<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div><!--Final detalle-->
-										<div class="col-sm-3"><!--Inicio Detalle-->
-											<div class="col-item">
-												<div class="photo">
-													<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-												</div>
-												<div class="info">
-													<div class="row">
-														<div class="price col-md-6">
-															<h5>Caja Sorpresa</h5>
-															<h5 class="price-text-color">$50.000</h5>
-														</div>
-													</div>
-													<div class="separato clear-left">
-														<p class="btn-add">
-															<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-														</p>
-														<p class="btn-details">
-															<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-														</p>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div><!--Final detalle-->
-									</div>
-							</div><!--Final de item-->
-							<div class="item active"><!--Comienzo de item-->
-								<div class="row">
-									<div class="col-sm-3"><!--Inicio Detalle-->
-										<div class="col-item">
-											<div class="photo">
-												<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-											</div>
-											<div class="info">
-												<div class="row">
-													<div class="price col-md-6">
-														<h5>Caja Sorpresa</h5>
-														<h5 class="price-text-color">$50.000</h5>
-													</div>
-												</div>
-												<div class="separato clear-left">
-													<p class="btn-add">
-														<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-													</p>
-													<p class="btn-details">
-														<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-													</p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div><!--Final detalle-->
-									<div class="col-sm-3"><!--Inicio Detalle-->
-										<div class="col-item">
-											<div class="photo">
-												<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-											</div>
-											<div class="info">
-												<div class="row">
-													<div class="price col-md-6">
-														<h5>Caja Sorpresa</h5>
-														<h5 class="price-text-color">$50.000</h5>
-													</div>
-												</div>
-												<div class="separato clear-left">
-													<p class="btn-add">
-														<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-													</p>
-													<p class="btn-details">
-														<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-													</p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div><!--Final detalle-->
-									<div class="col-sm-3"><!--Inicio Detalle-->
-										<div class="col-item">
-											<div class="photo">
-												<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-											</div>
-											<div class="info">
-												<div class="row">
-													<div class="price col-md-6">
-														<h5>Caja Sorpresa</h5>
-														<h5 class="price-text-color">$50.000</h5>
-													</div>
-												</div>
-												<div class="separato clear-left">
-													<p class="btn-add">
-														<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-													</p>
-													<p class="btn-details">
-														<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-													</p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div><!--Final detalle-->
-									<div class="col-sm-3"><!--Inicio Detalle-->
-										<div class="col-item">
-											<div class="photo">
-												<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
-											</div>
-											<div class="info">
-												<div class="row">
-													<div class="price col-md-6">
-														<h5>Caja Sorpresa</h5>
-														<h5 class="price-text-color">$50.000</h5>
-													</div>
-												</div>
-												<div class="separato clear-left">
-													<p class="btn-add">
-														<a href="#" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
-													</p>
-													<p class="btn-details">
-														<a href="#" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
-													</p>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-									</div><!--Final detalle-->
-								</div>
+						<!--Contenedor de los Slides-->
+						<div class="carousel-inner" id="inner">
+
+
 						</div><!--Final de item-->
 					</div><!--Final carrusel-->
 	     	</div>
 			</div>
 		</div>
 
-		<div class="section landing-section">
+		<div class="section landing-section " id="registro">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<h2 class="text-center title">Registrate</h2>
 					<h4 class="text-center description">¿Aun no tienes una cuenta? No esperes mas y unete.</h4>
-		        <form class="contact-form">
+		        <form class="contact-form" id="Registrar">
 	          	<div class="row">
 	            	<div class="col-md-4 col-md-offset-4">
 									<div class="form-group label-floating">
 										<label class="control-label">Nombre</label>
-										<input type="text" class="form-control" id="nombre">
+										<input type="text" class="form-control" name="nombre" id="nombre">
 									</div>
 								</div>
 
 								<div class="col-md-4 col-md-offset-4">
 									<div class="form-group label-floating">
 										<label class="control-label">Correo Electrónico</label>
-										<input type="email" class="form-control">
+										<input type="email" class="form-control" name="email" id="email">
 									</div>
 								</div>
 							</div>
-
+							<div class="row">
+	            	<div class="col-md-4 col-md-offset-4">
+									<div class="form-group label-floating">
+										<label class="control-label">Username</label>
+										<input type="text" class="form-control" name="username" id="username" >
+									</div>
+								</div>
+							</div>
 							<div class="row">
 								<div class="col-md-4 col-md-offset-4">
 									<div class="form-group label-floating">
 										<label class="control-label">Contraseña</label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" name="password" id="password">
 									</div>
 								</div>
 
 								<div class="col-md-4 col-md-offset-4">
 									<div class="form-group label-floating">
 										<label class="control-label">Confirmar Contraseña</label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control"  name="password_confirmacion" id="password_confirmacion">
 									</div>
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col-md-4 col-md-offset-4 text-center">
-									<button class="btn btn-primary btn-raised">
+									<button type="submit" class="btn btn-primary btn-raised" id="btnRegistro">
 										Registrar!
 									</button>
 								</div>
@@ -356,28 +166,3 @@
 		</div>
 
 	</div>
-
-	<script>
-		$(function(){
-			$("#btnLogin").click(function(){
-				var email = $('form[name=Sesion] input[name=email]')[0].value;
-				var password = $('form[name=Sesion] input[name=password]')[0].value;
-
-				if (email == '' || password == '') {
-
-				} else {
-					$.ajax({
-						type:"POST",
-						url:"<?php echo URL;?>public/User/login",
-						data:{email: email, password: password},
-						success: function(response){
-							if (response == '1') {
-								location.href = '<?php echo URL;?>public/Principal/index';
-							}
-						}
-					});
-				}
-				return false;
-			});
-		});
-	</script>

@@ -18,6 +18,18 @@ class Detalle extends Controller{
 		$this->view->render($this, 'ver',$response);
 	}
 
+	public function ultimosAgregados(){
+		$response = $this->model->ultimosAgregados();
+		foreach ($response as $value) {
+			$data['id'] = $value->id;
+			$data['nombre'] = $value->nombre;
+			$data['precio'] = $value->precio;
+			$data['ver'] = URL.'Detalle/ver/'.$value->id;
+			$arreglo[] = $data;
+		}
+		echo json_encode($arreglo);
+	}
+
 }
 
  ?>

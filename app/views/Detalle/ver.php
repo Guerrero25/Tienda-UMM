@@ -1,12 +1,6 @@
 <div class="wrapper">
-        <div class="header header-filter" style="background-image: url('<?php echo URL.APP_PATH.'views/'.DFT?>img/bg2.jpg');">
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-md-6 col-md-offset-3">
-        				<h1 class="title text-center">Tienda UMM</h1>
-        			</div>
-        		</div>
-        	</div>
+        <div class="hsm header header-filter" style="background-image: url('<?php echo URL.APP_PATH.'views/'.DFT?>img/bg2.jpg');">
+
         </div>
 
 		<div class="main main-raised">

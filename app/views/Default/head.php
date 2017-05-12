@@ -34,7 +34,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a href="<?php echo isset($_SESSION['Usuario']) ? URL.'public/Principal/index' : URL.'public/Main/index'; ?>">
+        		<a href="<?php echo isset($_SESSION['Usuario']) ? URL.'Principal/index' : URL.'Main/index'; ?>">
 							<div class="logo-container">
 								<div class="logo">
 									<img src="<?php echo URL.APP_PATH.'views/'.DFT; ?>img/logo.png" alt="Un Millon de Momentos Logo">
@@ -45,21 +45,21 @@
 
         	<div class="collapse navbar-collapse" id="navigation-doc">
             <ul class="nav navbar-nav ">
-    					<li><a href="<?php echo isset($_SESSION['Usuario']) ? URL.'public/Principal/index' : URL.'public/Main/index'; ?>">Inicio</a></li>
+    					<li><a href="<?php echo isset($_SESSION['Usuario']) ? URL.'Principal/index' : URL.'Main/index'; ?>">Inicio</a></li>
                   <?php if(isset($_SESSION['Usuario'])){ ?>
                   <li><a href="#">Perfil</a></li>
                   <?php } ?>
     	        		<li class="active dropdown">
     	        			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
     	        			<ul class="dropdown-menu">
-        						  <li><a href="<?php echo isset($_SESSION['Admin']) ? URL.'public/Admin/productos' : URL.'public/Detalle/index'; ?>">Ver todos</a></li>
+        						  <li><a href="<?php echo isset($_SESSION['Admin']) ? URL.'Admin/productos' : URL.'Detalle/index'; ?>">Ver todos</a></li>
         						  <li class="divider"></li>
         						  <li><a href="#">Cajas Sorpresas</a></li>
         						  <li><a href="#">Decoraciones</a></li>
         						  <li><a href="#">Arreglos</a></li>
     	        			</ul>
                     <?php if(isset($_SESSION['Usuario'])){ ?>
-                      <li><a href="<?php echo URL.'public/User/cerrarSesion';?>">Cerrar Sesion</a></li>
+                      <li><a href="<?php echo URL.'User/cerrarSesion';?>">Cerrar Sesion</a></li>
                     <?php } ?>
     	        		</li>
     	    		</ul>

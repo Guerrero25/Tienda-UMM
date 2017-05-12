@@ -9,5 +9,8 @@
 			return $this::find('first', array('id' => $id));
 		}
 
+		function ultimosAgregados(){
+			return $this::find('all');
+		}
 	}
 ?>

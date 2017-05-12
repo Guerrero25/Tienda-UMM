@@ -50,4 +50,6 @@
  <!-- JS funciones -->
  <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/jquery.validate.js" type="text/javascript"></script>
  <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/funciones.js" type="text/javascript"></script>
+ <script src="<?php echo URL.APP_PATH.'views/'.DFT; ?>js/ultimosAgregados.js" type="text/javascript"></script>
+ <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 </html>
