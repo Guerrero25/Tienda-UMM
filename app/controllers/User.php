@@ -11,9 +11,15 @@ class User extends Controller{
   public function login(){
     if (isset($_POST["email"]) && isset($_POST["password"])) {
       $response = $this->model->login($_POST['email']);
-      if ($response->password == $_POST["password"]) {
-        $this->crearSesion($response->nombre);
-        echo '1';
+      if($response != ''){
+        if ($response->password == $_POST["password"]) {
+          $this->crearSesion($response->nombre);
+          echo '1';
+        }else{
+          echo "Los datos ingresados no coinciden!";
+        }
+      }else{
+        echo "Correo No Registrado";
       }
     }
   }
@@ -21,7 +27,7 @@ class User extends Controller{
   public function registro()
   {
     if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["nombre"])&& isset($_POST["username"])){
-      $email = $_POST["email"];
+      $email = ($_POST["email"]);
       $pass = $_POST["password"];
       $nombre = $_POST["nombre"];
       $username = $_POST["username"];

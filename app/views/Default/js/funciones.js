@@ -2,8 +2,7 @@ $(document).ready(function() {
   $("#Sesion").validate({
     rules: {
       email: {
-        required: true,
-        email: true
+        required: true
       },
       password: {
         required: true,
@@ -11,38 +10,25 @@ $(document).ready(function() {
       }
     },
 
-    messages: {
-      email: {
-        required: "<center><td colSpan='2'><font color='#CD2C24'>Debe ingresar un email.</font></td></center>"
-      },
-      password: {
-        required: "<center><td colSpan='2'><font color='#CD2C24'>Ingrese una contraseña.</font></td></center>"
-      }
-    }
-  });
-  $("#btnLogin").click(function(){
+  submitHandler: function(){
     var email = $('form[name=Sesion] input[name=email]')[0].value;
     var password = $('form[name=Sesion] input[name=password]')[0].value;
 
-    if (email == '' || password == '') {
-
-    } else {
-      $.ajax({
-        type:"POST",
-        url:"<?php echo URL;?>public/User/login",
-        data:{email: email, password: password},
-        success: function(response){
-          if (response == '1') {
-            location.href = '../Principal/index';
-          }else{
-            alert(response);
-          }
+    $.ajax({
+      type:"POST",
+      url:"../User/login",
+      data:{email: email, password: password},
+      success: function(response){
+        if (response == '1') {
+        location.href = '../Principal/index';
+        }else{
+        alert(response);
         }
-      });
-    }
-    return false;
+      }
+     });
+  }
   });
-
+  
   $('#Registrar').validate({
     rules: {
       password: {
