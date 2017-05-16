@@ -1,17 +1,7 @@
 <?php
   Sesion::start();
   $userName  = Sesion::getSesion('Usuario');
-?>
-<div class="header header-filter" style="background-image: url('<?php echo URL.APP_PATH.'views/'.DFT?>img/bg2.jpg');">
-        	<div class="container">
-        		<div class="row">
-        			<div class="col-md-6 col-md-offset-3">
-        				<h1 class="title text-center">Tienda UMM</h1>
-        			</div>
-        		</div>
-        	</div>
-        </div>
-
+?><br><br><br><br><br><br><br>
 		<div class="main main-raised">
 			<div class="container">
 				<div class="section landing-section">
@@ -68,3 +58,8 @@
 				</div>
 	        </div>
 		</div>
+
+    <script type="text/javascript">
+      $(".navbar").removeClass("navbar-transparent");
+      $(".navbar").addClass("navbar-primary");
+    </script>

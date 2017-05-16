@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $.ajax({
    type: "POST",
-   url: "../Detalle/ultimosAgregados",
+   url: "../../proyecto/Detalle/ultimosAgregados",
    success: function(response) {
      var cont = 0;
      var row = $('<div>',{'class': 'row'});
