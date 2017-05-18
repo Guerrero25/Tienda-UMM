@@ -9,7 +9,12 @@ class Sesion{
   }
 
   static function getSesion($name){
-    return $_SESSION[$name];
+    if(isset($_SESSION[$name])){
+      return $_SESSION[$name];
+    }else{
+      return '';
+    }
+
   }
 
   static function setSesion($name, $data){

@@ -30,6 +30,43 @@
   height: 80px !important;
 }
 
+.margen-bot{
+  margin-bottom: 10px;
+}
+
+.cont {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.cont img{
+  width: 100%;
+}
+
+.descripcion{
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+.especificaciones{
+  border-radius: 5px;
+  margin: 4px 2px;
+  font-size: 14px;
+  background-color: #fff;
+  padding: 5px 5px;
+}
+
+.precio{
+  background-color: #fff;
+  border-radius: 5px;
+  color: red;
+  font-weight: bold;
+  margin: 4px 2px;
+  padding: 5px 5px;
+}
+
+.modal-content{
+  background-color: #E9EBEE;
+}
 /*Navegacion de los productos destacados*/
 .col-item
 {

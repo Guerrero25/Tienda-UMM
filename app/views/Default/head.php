@@ -5,6 +5,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo URL.APP_PATH.'views/'.DFT ?>img/apple-icon.png">
 	<link rel="icon" type="image/png" href="<?php echo URL.APP_PATH.'views/'.DFT ?>img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
 	<title>Un Millón de Momentos</title>
 
@@ -64,18 +65,84 @@
     	        		</li>
     	    		</ul>
             <ul class="nav navbar-nav navbar-right">
-
-		            <li>
-		                <a href="https://www.facebook.com/Un-mill%C3%B3n-de-momentos-1189791587730712/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-facebook-square"></i> Facebook!
-						</a>
-		            </li>
-					<li>
-		                <a href="https://www.instagram.com/unmillondemomentos/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
-							<i class="fa fa-instagram"></i> Instagram
-						</a>
-		            </li>
+							<?php if(Sesion::getSesion('Usuario') == ''){ ?>
+							<li>
+								<a href="#" data-toggle="modal" data-target= "#login">Login/Singup</a>
+							</li>
+							<?php } ?>
+		         	<li>
+		          	<a href="https://www.facebook.com/Un-mill%C3%B3n-de-momentos-1189791587730712/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+									<i class="fa fa-facebook-square"></i>
+								</a>
+		          </li>
+							<li>
+		          	<a href="https://www.instagram.com/unmillondemomentos/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
+									<i class="fa fa-instagram"></i>
+								</a>
+		          </li>
         		</ul>
         	</div>
     	</div>
     </nav>
+		<!--Modal de Inicio de Sesion-->
+		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog ">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <button type="button" class="btn btn-info" data-toggle="popover" data-placement="bottom" title="Ayuda" data-content="Iniciar sesión te sirve para realizar pedidos a nuestra tienda, y tener un contacto contigo.">
+							<i class="fa fa-info" aria-hidden="true"></i>
+						</button>
+		      </div>
+		      <div class="modal-body">
+						<div class="col-md-12">
+							<div class="card card-signup">
+								<!-- Formulario de Inicio de Sesion-->
+								<form class="contact-form" role="form" id="Sesion" name="Sesion">
+									<div class="hsm header header-primary text-center">
+										<h4>Iniciar Sesión</h4>
+									</div>
+									<p class="text-divider">Divisor</p>
+
+										<div class="content">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="material-icons">email</i>
+												</span>
+												<div class="form-group is-empty">
+													<input type="email" placeholder="Correo Electrónico" name="email" id="email" class="form-control" required>
+													<span class="matrial-input"></span>
+												</div>
+											</div>
+											<div class="input-group">
+												<div class="input-group-addon">
+													<span class="material-icons">lock_outline</span>
+												</div>
+												<div class="form-group is-empty">
+													<input type="password" placeholder="Contraseña" name="password" class="form-control" required>
+													<span class="matrial-input"></span>
+												</div>
+											</div>
+										</div>
+
+										<div class="footer text-center">
+											<button type="submit" id="btnLogin" class="btn btn-primary btn-raised">
+												Iniciar Sesion
+											</button>
+											<button type="button"class="btn btn-danger btn-raised" data-dismiss="modal">
+												Cancelar
+											</button>
+										</div>
+								 </form>
+								 <br>
+								 <!--Fin Formulario de Inicio-->
+							</div>
+						</div>
+		      </div>
+		      <div class="modal-footer">
+						<center><a href="#registro" class="btn btn-simple" data-dismiss="modal">Registrate aqui</a></center>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!--Final Modal Inicio de Sesion -->

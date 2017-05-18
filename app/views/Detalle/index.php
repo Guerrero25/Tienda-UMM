@@ -4,23 +4,24 @@
 		<div class="container">
 			<div class="section landing-section">
 				<div class="row">
-					<div class="col-md-4 pull-left">
-						<h2>Productos:</h2>
-					</div>
-					<div class="col-md-3 dropdown pull-rigth">
-						<a href="#" class="btn  btn-primary dropdown-toggle" data-toggle="dropdown">Categorias
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-
-						</ul>
+					<div class="col-md-3">
+						<div class=" pull-left dropdown">
+							<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Categorias
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="<?php echo URL.'Detalle/categoria/sorpresas'; ?>">Cajas Sorpresas</a></li>
+								<li><a href="<?php echo URL.'Detalle/categoria/arreglos'; ?>">Arreglos</a></li>
+								<li><a href="<?php echo URL.'Detalle/categoria/carteles'; ?>">Carteles</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="container">
 						<div class="row">
 							<?php foreach ($array as $value) { ?>
-							<div class="col-md-4">
+							<div class="col-md-4 margen-bot">
 								<div class="col-item">
 									<div class="photo">
 										<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
@@ -37,7 +38,7 @@
 												<a href="" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
 											</p>
 											<p class="btn-details">
-												<a href="<?php echo URL.'public/Detalle/ver/'.$value->id ?>" class="hidden-sm"><i class="material-icons">list</i>Detalles</a>
+												<a href="#" data-toggle="modal" data-target= "#detalle" id="<?= $value->id;?>" class="producto"><i class="material-icons">list</i>Detalles</a>
 											</p>
 										</div>
 										<div class="clearfix">
@@ -53,6 +54,50 @@
 		</div>
 	</div>
 
+	<!--Modal de Ver detalle-->
+	<div class="modal fade" id="detalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	      </div>
+	      <div class="modal-body">
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="cont">
+									<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="descripcion">
+									<h4 class="price-text-color" id="nombre"></h4>
+									<p id="descripcion"></p>
+								</div>
+								<div class="especificaciones">
+									<h4>Especificaciones</h4>
+
+								</div>
+								<div class="precio">
+									<h3 id="precio"></h3>
+								</div>
+								<div class="opciones pull-right">
+									<a href="" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i> Comprar</a>
+									<button type="button" href="#" class="btn btn-danger btn-simple" data-dismiss="modal">Cancelar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+	      </div>
+	      <div class="modal-footer">
+
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--Final Modal Ver Detalle -->
+
+	<script src="<?php echo URL.APP_PATH.'views/'.DFT;?>js/detalle.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		$(".navbar").removeClass("navbar-transparent");
 		$(".navbar").removeClass("navbar-color-on-scroll");

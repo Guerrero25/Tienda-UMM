@@ -37,11 +37,27 @@ $(document).ready(function() {
        $(info).append(row_i);
        $(info).append(separator);
        $(separator).append('<p class="btn-add"><a href="" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a></p>');
-       $(separator).append('<p class="btn-details"><a href="'+value.ver+'" class="hidden-sm"><i class="material-icons">list</i>Detalles</a></p>');
+       $(separator).append('<p class="btn-details"><a class="producto" href="#" data-toggle="modal" data-target= "#detalle" id="'+value.ver+'"><i class="material-icons">list</i>Detalles</a></p>');
        $(info).append('<div class= "clearfix"></div>');
 
        cont++;
      });
    }
+  });
+
+  $("#inner").on('click','.producto', function (producto) {
+    var id = producto.target.id;
+    $.ajax({
+      type: "POST",
+      data: {id: id},
+      url: "../Detalle/ver",
+      success: function (response) {
+        response = $.parseJSON(response);
+        $("#dnombre").text(response.nombre);
+        $("#ddescripcion").text(response.descripcion);
+        $('#dprecio').text('$ '+response.precio);
+
+      }
+    });
   });
 });
