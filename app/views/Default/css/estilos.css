@@ -44,24 +44,33 @@
 
 .descripcion{
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px 5px;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
 }
 .especificaciones{
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 4px 2px;
   font-size: 14px;
   background-color: #fff;
   padding: 5px 5px;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
 }
 
 .precio{
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   color: red;
-  font-weight: bold;
+  font-weight: bold !important;
   margin: 4px 2px;
   padding: 5px 5px;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.42);
 }
 
 .modal-content{
@@ -76,6 +85,7 @@
 }
 .col-item .photo img
 {
+    height: 360px;
     margin: 0 auto;
     width: 100%;
 }

@@ -21,7 +21,7 @@ $(document).ready(function() {
        var row_i = $('<div>',{'class': 'row'});
        var photo = $('<div>',{'class': 'photo'});
        var info = $('<div>',{'class': 'info'});
-       var img = $('<img>',{src: "http://localhost/proyecto/app/views/Default/img/detalle1.jpg",alt: 'Detalle 1'});
+       var img = $('<img>',{src: "data:image/jpeg;base64,"+value.imagen,alt: 'Detalle 1'});
        var precio = $('<div>',{'class': 'price col-md-8'});
        var separator = $('<div>',{'class': 'separator clear-left'});
        var col_item = $('<div>',{'class': 'col-item'});
@@ -50,13 +50,13 @@ $(document).ready(function() {
     $.ajax({
       type: "POST",
       data: {id: id},
-      url: "../Detalle/ver",
+      url: "../../proyecto/Detalle/ver",
       success: function (response) {
         response = $.parseJSON(response);
         $("#dnombre").text(response.nombre);
         $("#ddescripcion").text(response.descripcion);
         $('#dprecio').text('$ '+response.precio);
-
+        $('#imagen').attr('src','data:image/jpeg;base64,'+response.imagen);
       }
     });
   });

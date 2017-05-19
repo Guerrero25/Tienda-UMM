@@ -12,5 +12,9 @@
 		function ultimosAgregados(){
 			return $this::find('all');
 		}
+
+		function categoria($categoria){
+			return $this::find('all', array('categoria' => $categoria));
+		}
 	}
 ?>

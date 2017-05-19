@@ -24,7 +24,7 @@
 							<div class="col-md-4 margen-bot">
 								<div class="col-item">
 									<div class="photo">
-										<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
+										<img src="data:image/jpeg;base64,<?php echo base64_encode($value->imagen); ?>" alt="Detalle 1">
 									</div>
 									<div class="info">
 										<div class="row">
@@ -66,7 +66,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="cont">
-									<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
+									<img id="imagen" src="" alt="Detalle 1">
 								</div>
 							</div>
 							<div class="col-md-6">

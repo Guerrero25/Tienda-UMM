@@ -118,7 +118,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="cont">
-									<img src="<?php echo URL.APP_PATH.'views/'.DFT?>img/detalle1.jpg" alt="Detalle 1">
+									<img id="imagen" src="" alt="Detalle 1">
 								</div>
 							</div>
 							<div class="col-md-6">

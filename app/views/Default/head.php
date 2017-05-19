@@ -46,29 +46,24 @@
 
         	<div class="collapse navbar-collapse" id="navigation-doc">
             <ul class="nav navbar-nav ">
-    					<li><a href="<?php echo isset($_SESSION['Usuario']) ? URL.'Principal/index' : URL.'Main/index'; ?>">Inicio</a></li>
-                  <?php if(isset($_SESSION['Usuario'])){ ?>
-                  <li><a href="#">Perfil</a></li>
-                  <?php } ?>
-    	        		<li class="active dropdown">
-    	        			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
-    	        			<ul class="dropdown-menu">
-        						  <li><a href="<?php echo isset($_SESSION['Admin']) ? URL.'Admin/productos' : URL.'Detalle/index'; ?>">Ver todos</a></li>
-        						  <li class="divider"></li>
-        						  <li><a href="#">Cajas Sorpresas</a></li>
-        						  <li><a href="#">Decoraciones</a></li>
-        						  <li><a href="#">Arreglos</a></li>
-    	        			</ul>
-                    <?php if(isset($_SESSION['Usuario'])){ ?>
-                      <li><a href="<?php echo URL.'User/cerrarSesion';?>">Cerrar Sesion</a></li>
-                    <?php } ?>
-    	        		</li>
-    	    		</ul>
+    					<li><a href="<?php echo URL.'Main/index'; ?>">Inicio</a></li>
+							<li><a href="<?php echo isset($_SESSION['Admin']) ? URL.'Admin/productos' : URL.'Detalle/index'; ?>">Todos</a></li>
+    	        <li><a href="<?php echo URL.'Detalle/categoria/sorpresas'; ?>">Cajas Sorpresas</a></li>
+							<li><a href="<?php echo URL.'Detalle/categoria/carteles'; ?>">Carteles</a></li>
+							<li><a href="<?php echo URL.'Detalle/categoria/arreglos'; ?>">Arreglos</a></li>
+    	    	</ul>
             <ul class="nav navbar-nav navbar-right">
 							<?php if(Sesion::getSesion('Usuario') == ''){ ?>
 							<li>
 								<a href="#" data-toggle="modal" data-target= "#login">Login/Singup</a>
 							</li>
+							<?php }else{ ?>
+								<li class="active dropdown">
+									<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="material-icons">account_circle</i> <?php echo Sesion::getSesion('Usuario'); ?></a>
+									<ul class="dropdown-menu">
+										<li><a href="<?php echo URL.'User/cerrarSesion';?>">Cerrar Sesion</a></li>
+									</ul>
+								</li>
 							<?php } ?>
 		         	<li>
 		          	<a href="https://www.facebook.com/Un-mill%C3%B3n-de-momentos-1189791587730712/" target="_blank" class="btn btn-simple btn-white btn-just-icon">
@@ -84,6 +79,7 @@
         	</div>
     	</div>
     </nav>
+		<?php  if(Sesion::getSesion('Usuario') == ''){ ?>
 		<!--Modal de Inicio de Sesion-->
 		<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		  <div class="modal-dialog ">
@@ -146,3 +142,4 @@
 		  </div>
 		</div>
 		<!--Final Modal Inicio de Sesion -->
+<?php } ?>

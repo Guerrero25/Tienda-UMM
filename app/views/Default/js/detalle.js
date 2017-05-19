@@ -5,14 +5,14 @@ $(document).ready(function(){
     $.ajax({
       type: "POST",
       data: {id: id},
-      url: "../Detalle/ver",
+      url: "../../../proyecto/Detalle/ver",
       success: function (response) {
         response = $.parseJSON(response);
         console.log(response);
         $("#nombre").text(response.nombre);
         $("#descripcion").text(response.descripcion);
         $('#precio').text('$ '+response.precio);
-
+        $('#imagen').attr('src','data:image/jpeg;base64,'+response.imagen);
       }
     });
   });

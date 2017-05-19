@@ -21,6 +21,7 @@ class Detalle extends Controller{
 				$data['nombre'] = $response->nombre;
 				$data['descripcion'] = $response->descripcion;
 				$data['precio']= $response->precio;
+				$data['imagen'] = base64_encode($response->imagen);
 				//$data['comprar'] = URL.'Pedido/nuevo/'.$response->id;
 				echo json_encode($data, JSON_UNESCAPED_UNICODE);
 			}
@@ -28,6 +29,16 @@ class Detalle extends Controller{
 		}
 	}
 
+	public function categoria($categoria)
+	{
+		$response = $this->model->categoria($categoria);
+		if($response != ''){
+			$this->view->render($this, 'index', $response);
+		}else{
+			$response = $this->model->todos();
+			$this->view->render($this, 'index', $response);
+		}
+	}
 	public function ultimosAgregados(){
 		$response = $this->model->ultimosAgregados();
 		foreach ($response as $value) {
@@ -35,6 +46,7 @@ class Detalle extends Controller{
 			$data['nombre'] = $value->nombre;
 			$data['precio'] = $value->precio;
 			$data['ver'] = $value->id;
+			$data['imagen'] = base64_encode($value->imagen);
 			$arreglo[] = $data;
 		}
 		echo json_encode($arreglo, JSON_UNESCAPED_UNICODE);
