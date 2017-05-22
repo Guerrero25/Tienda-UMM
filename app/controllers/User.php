@@ -8,12 +8,27 @@ class User extends Controller{
     parent::__construct();
   }
 
+  public function ver()
+  {
+    if(isset($_POST['id'])){
+      $id = $_POST['id'];
+      $response = $this->model->buscar($id);
+      if($response != ''){
+        $data['nombre'] = $response->nombre;
+        $data['username'] = $response->username;
+        $data['contraseña'] = $response->password;
+        $data['email'] = $response->email;
+        echo json_encode($data);
+      }
+    }
+  }
+
   public function login(){
     if (isset($_POST["email"]) && isset($_POST["password"])) {
       $response = $this->model->login($_POST['email']);
       if($response != ''){
         if ($response->password == $_POST["password"]) {
-          $this->crearSesion($response->nombre);
+          $this->crearSesion($response->username, $response->id);
           echo '1';
         }else{
           echo "Los datos ingresados no coinciden!";
@@ -34,8 +49,8 @@ class User extends Controller{
 
       $response = $this->model->login($email);
       if($response == ''){
-        $this->model->nuevoRegistro($nombre,$email,$username,$pass);
-        $this->crearSesion($username);
+        $nuevo = $this->model->nuevoRegistro($nombre,$email,$username,$pass);
+        $this->crearSesion($nuevo->username, $nuevo->id);
         echo '1';
       }else {
         echo 'El correo ya esta registrado';
@@ -43,8 +58,9 @@ class User extends Controller{
     }
   }
 
-  function crearSesion($user){
+  function crearSesion($user, $id){
     Sesion::setSesion('Usuario', $user);
+    Sesion::setSesion('id', $id);
   }
 
   function cerrarSesion(){

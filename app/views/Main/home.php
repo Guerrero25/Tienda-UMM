@@ -47,63 +47,9 @@
 
 		<div class="section landing-section " id="registro">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-					<h2 class="text-center title">Registrate</h2>
-					<h4 class="text-center description">¿Aun no tienes una cuenta? No esperes mas y unete.</h4>
-		        <form class="contact-form" id="Registrar">
-	          	<div class="row">
-	            	<div class="col-md-4 col-md-offset-4">
-									<div class="form-group label-floating">
-										<label class="control-label">Nombre</label>
-										<input type="text" class="form-control" name="nombre" id="nombre">
-									</div>
-								</div>
-
-								<div class="col-md-4 col-md-offset-4">
-									<div class="form-group label-floating">
-										<label class="control-label">Correo Electrónico</label>
-										<input type="email" class="form-control" name="email" id="email">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-	            	<div class="col-md-4 col-md-offset-4">
-									<div class="form-group label-floating">
-										<label class="control-label">Username</label>
-										<input type="text" class="form-control" name="username" id="username" >
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-4 col-md-offset-4">
-									<div class="form-group label-floating">
-										<label class="control-label">Contraseña</label>
-										<input type="password" class="form-control" name="password" id="password">
-									</div>
-								</div>
-
-								<div class="col-md-4 col-md-offset-4">
-									<div class="form-group label-floating">
-										<label class="control-label">Confirmar Contraseña</label>
-										<input type="password" class="form-control"  name="password_confirmacion" id="password_confirmacion">
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-md-4 col-md-offset-4 text-center">
-									<button type="submit" class="btn btn-primary btn-raised" id="btnRegistro">
-										Registrar!
-									</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
 
 			</div>
 		</div>
-
 	</div>
 
 	<!--Modal de Ver detalle-->
@@ -122,16 +68,21 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="descripcion">
-									<h4 class="price-text-color" id="dnombre"></h4>
-									<p id="ddescripcion"></p>
+								<div class="card">
+									<div class="content">
+										<h4 class="price-text-color" id="dnombre"></h4>
+										<p id="ddescripcion"></p>
+									</div>
 								</div>
-								<div class="especificaciones">
-									<h4>Especificaciones</h4>
-
+								<div class="card">
+									<div class="content">
+										<h4>Especificaciones</h4>
+									</div>
 								</div>
-								<div class="precio">
-									<h3 id="dprecio"></h3>
+								<div class="card">
+									<div class="content">
+										<h3 id="dprecio" class="precio"></h3>
+									</div>
 								</div>
 								<div class="opciones">
 									<a href="" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i>Comprar</a>

@@ -36,7 +36,7 @@ $(document).ready(function() {
        $(row_i).append(precio);
        $(info).append(row_i);
        $(info).append(separator);
-       $(separator).append('<p class="btn-add"><a href="" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a></p>');
+       $(separator).append('<p class="btn-add"><a href="'+value.comprar+'" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a></p>');
        $(separator).append('<p class="btn-details"><a class="producto" href="#" data-toggle="modal" data-target= "#detalle" id="'+value.ver+'"><i class="material-icons">list</i>Detalles</a></p>');
        $(info).append('<div class= "clearfix"></div>');
 

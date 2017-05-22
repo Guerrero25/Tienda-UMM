@@ -1,5 +1,5 @@
 
-<br><br><br><br><br><br><br>
+<div class="col-md-12" style="height:130px"></div>
 	<div class="main main-raised">
 		<div class="container">
 			<div class="section landing-section">
@@ -35,7 +35,7 @@
 										</div>
 										<div class="separator clear-left">
 											<p class="btn-add">
-												<a href="" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
+												<a href="<?= URL.'Pedido/nuevo/'.$value->id ?>" class="hidden-sm"><i class="material-icons">favorite</i>Comprar</a>
 											</p>
 											<p class="btn-details">
 												<a href="#" data-toggle="modal" data-target= "#detalle" id="<?= $value->id;?>" class="producto"><i class="material-icons">list</i>Detalles</a>

@@ -16,11 +16,11 @@ $(document).ready(function() {
 
     $.ajax({
       type:"POST",
-      url:"../User/login",
+      url:"../../../proyecto/User/login",
       data:{email: email, password: password},
       success: function(response){
         if (response == '1') {
-        location.href = '../Principal/index';
+        location.reload(true);
         }else{
         alert(response);
         }
@@ -28,7 +28,7 @@ $(document).ready(function() {
      });
   }
   });
-  
+
   $('#Registrar').validate({
     rules: {
       password: {
@@ -46,6 +46,9 @@ $(document).ready(function() {
       },
       username:{
         required: true
+      },
+      telefono:{
+        required: true
       }
     },
     submitHandler: function() {
@@ -57,16 +60,29 @@ $(document).ready(function() {
 
       $.ajax({
         type: "POST",
-        url: "../User/registro",
+        url: "../../../proyecto/User/registro",
         data: {nombre: nombre, email: email, username: username, password: password},
         success: function (response) {
           if(response=='1'){
-            location.href = '../Principal/index';
+            location.reload();
           }else {
             alert(response);
           }
         }
       });
     }
+  });
+
+  $('a[name=actualizar]').click(function(a) {
+    var id = a.target.id;
+    $.ajax({
+      type: "POST",
+      url: "../../../proyecto/User/ver",
+      data: {id: id},
+      success: function(response) {
+        response = $.parseJSON(response);
+        console.log(response.nombre);
+      }
+    });
   });
 });
