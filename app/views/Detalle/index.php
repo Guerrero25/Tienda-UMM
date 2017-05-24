@@ -70,17 +70,20 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="descripcion">
-									<h4 class="price-text-color" id="nombre"></h4>
-									<p id="descripcion"></p>
-								</div>
-								<div class="especificaciones">
-									<h4>Especificaciones</h4>
+								<div class="card">
+									<div class="content">
+										<h4 class="price-text-color" id="nombre"></h4>
+										<p id="descripcion"></p>
+									</div>
+									<div class="content">
+										<h4>Especificaciones</h4>
 
+									</div>
+									<div class="content">
+										<h3 id="precio"></h3>
+									</div>
 								</div>
-								<div class="precio">
-									<h3 id="precio"></h3>
-								</div>
+
 								<div class="opciones pull-right">
 									<a href="" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i> Comprar</a>
 									<button type="button" href="#" class="btn btn-danger btn-simple" data-dismiss="modal">Cancelar</button>

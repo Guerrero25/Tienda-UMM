@@ -15,14 +15,8 @@ class Detalle extends Controller{
 	public function ver(){
 		if(isset($_POST['id'])){
 			$id = $_POST['id'];
-			$response = $this->model->ver($id);
-			if($response != ''){
-				$data['id'] = $response->id;
-				$data['nombre'] = $response->nombre;
-				$data['descripcion'] = $response->descripcion;
-				$data['precio']= $response->precio;
-				$data['imagen'] = base64_encode($response->imagen);
-				$data['comprar'] = URL.'Pedido/nuevo/'.$response->id;
+			$data = $this->model->ver($id);
+			if($data != ''){
 				echo json_encode($data, JSON_UNESCAPED_UNICODE);
 			}
 
@@ -41,16 +35,8 @@ class Detalle extends Controller{
 	}
 	public function ultimosAgregados(){
 		$response = $this->model->ultimosAgregados();
-		foreach ($response as $value) {
-			$data['id'] = $value->id;
-			$data['nombre'] = $value->nombre;
-			$data['precio'] = $value->precio;
-			$data['ver'] = $value->id;
-			$data['imagen'] = base64_encode($value->imagen);
-			$data['comprar'] = URL.'Pedido/nuevo/'.$value->id;
-			$arreglo[] = $data;
-		}
-		echo json_encode($arreglo, JSON_UNESCAPED_UNICODE);
+
+		echo json_encode($response, JSON_UNESCAPED_UNICODE);
 	}
 
 }

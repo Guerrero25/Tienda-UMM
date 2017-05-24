@@ -6,14 +6,31 @@
  {
 
 
-   function login($correo)
+   function login($correo, $password)
    {
-     return $this::find('first', array('email' => $correo));
+     $response = $this::find('first', array('email' => $correo));
+     if($response != ''){
+       if ($response->password == $password) {
+         $this->crearSesion($response->username, $response->id);
+         return '1';
+       }else{
+         return "Los datos ingresados no coinciden!";
+       }
+     }else{
+       return "Correo No Registrado";
+     }
    }
 
    function buscar($id)
    {
-     return $this::find('first', array('id' => $id));
+     $response = $this::find('first', array('id' => $id));
+     if($response != ''){
+       $data['nombre'] = $response->nombre;
+       $data['username'] = $response->username;
+       $data['contraseña'] = $response->password;
+       $data['email'] = $response->email;
+       return $data;
+     }
    }
 
    public function nuevoRegistro($nombre,$email,$username,$pass)
@@ -22,7 +39,13 @@
      $this::create($atributos);
      $this::first( array('email' => $email ));
    }
+
+   function crearSesion($user, $id){
+     Sesion::setSesion('Usuario', $user);
+     Sesion::setSesion('id', $id);
+   }
  }
+
 
 
  ?>

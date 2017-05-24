@@ -6,11 +6,32 @@
 		}
 
 		function ver($id){
-			return $this::find('first', array('id' => $id));
+			$response =  $this::find('first', array('id' => $id));
+			if($response != ''){
+				$data['id'] = $response->id;
+				$data['nombre'] = $response->nombre;
+				$data['descripcion'] = $response->descripcion;
+				$data['precio']= $response->precio;
+				$data['imagen'] = base64_encode($response->imagen);
+				$data['comprar'] = URL.'Pedido/nuevo/'.$response->id;
+				return $data;
+			}else{
+				return '';
+			}
 		}
 
 		function ultimosAgregados(){
-			return $this::find('all');
+			$response =  $this::find('all');
+			foreach ($response as $value) {
+				$data['id'] = $value->id;
+				$data['nombre'] = $value->nombre;
+				$data['precio'] = $value->precio;
+				$data['ver'] = $value->id;
+				$data['imagen'] = base64_encode($value->imagen);
+				$data['comprar'] = URL.'Pedido/nuevo/'.$value->id;
+				$arreglo[] = $data;
+			}
+			return $arreglo;
 		}
 
 		function categoria($categoria){

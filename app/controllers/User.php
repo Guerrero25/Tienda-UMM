@@ -13,29 +13,14 @@ class User extends Controller{
     if(isset($_POST['id'])){
       $id = $_POST['id'];
       $response = $this->model->buscar($id);
-      if($response != ''){
-        $data['nombre'] = $response->nombre;
-        $data['username'] = $response->username;
-        $data['contraseña'] = $response->password;
-        $data['email'] = $response->email;
-        echo json_encode($data);
-      }
+      echo json_encode($response);
     }
   }
 
   public function login(){
     if (isset($_POST["email"]) && isset($_POST["password"])) {
-      $response = $this->model->login($_POST['email']);
-      if($response != ''){
-        if ($response->password == $_POST["password"]) {
-          $this->crearSesion($response->username, $response->id);
-          echo '1';
-        }else{
-          echo "Los datos ingresados no coinciden!";
-        }
-      }else{
-        echo "Correo No Registrado";
-      }
+      $response = $this->model->login($_POST['email'],$_POST["password"]);
+      echo $response;
     }
   }
 
@@ -56,11 +41,6 @@ class User extends Controller{
         echo 'El correo ya esta registrado';
       }
     }
-  }
-
-  function crearSesion($user, $id){
-    Sesion::setSesion('Usuario', $user);
-    Sesion::setSesion('id', $id);
   }
 
   function cerrarSesion(){

@@ -73,17 +73,14 @@
 										<h4 class="price-text-color" id="dnombre"></h4>
 										<p id="ddescripcion"></p>
 									</div>
-								</div>
-								<div class="card">
 									<div class="content">
 										<h4>Especificaciones</h4>
 									</div>
-								</div>
-								<div class="card">
 									<div class="content">
 										<h3 id="dprecio" class="precio"></h3>
 									</div>
 								</div>
+								
 								<div class="opciones">
 									<a href="" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i>Comprar</a>
 									<button type="button" href="#" class="btn btn-danger btn-simple" data-dismiss="modal">Cancelar</button>
