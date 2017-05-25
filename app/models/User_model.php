@@ -29,6 +29,7 @@
        $data['username'] = $response->username;
        $data['contraseña'] = $response->password;
        $data['email'] = $response->email;
+       $data['telefono'] = $response->telefono;
        return $data;
      }
    }
@@ -43,6 +44,17 @@
    function crearSesion($user, $id){
      Sesion::setSesion('Usuario', $user);
      Sesion::setSesion('id', $id);
+   }
+
+   function actualizar($email, $pass, $nombre, $username,$telefono)
+   {
+     $user = $this::first(array('id' => Sesion::getSesion('id')));
+     $user->nombre = $nombre;
+     $user->password = $pass;
+     $user->email = $email;
+     $user->username = $username;
+     $user->telefono = $telefono;
+     $user->save();
    }
  }
 

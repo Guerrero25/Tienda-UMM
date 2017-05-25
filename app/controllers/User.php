@@ -43,6 +43,18 @@ class User extends Controller{
     }
   }
 
+  public function actualizar ()
+  {
+    $email = ($_POST["email"]);
+    $pass = $_POST["password"];
+    $nombre = $_POST["nombre"];
+    $username = $_POST["username"];
+    $telefono = $_POST["telefono"];
+
+    $this->model->actualizar($email, $pass, $nombre, $username,$telefono);
+    echo 'Datos Actualizados Exitosamente!';
+  }
+
   function cerrarSesion(){
     Sesion::destroy();
 

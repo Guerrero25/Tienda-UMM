@@ -75,7 +75,7 @@
 										<h4 class="price-text-color" id="nombre"></h4>
 										<p id="descripcion"></p>
 									</div>
-									<div class="content">
+									<div class="content" id="esp">
 										<h4>Especificaciones</h4>
 
 									</div>
@@ -85,7 +85,7 @@
 								</div>
 
 								<div class="opciones pull-right">
-									<a href="" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i> Comprar</a>
+									<a href="" id="comprar" class="btn btn-primary btn-sm"><i class="material-icons">favorite</i> Comprar</a>
 									<button type="button" href="#" class="btn btn-danger btn-simple" data-dismiss="modal">Cancelar</button>
 								</div>
 							</div>

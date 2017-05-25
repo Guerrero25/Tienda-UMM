@@ -81,8 +81,84 @@ $(document).ready(function() {
       data: {id: id},
       success: function(response) {
         response = $.parseJSON(response);
-        console.log(response.nombre);
+        $('form[id=Actualizar] input[name=nombre]').val(response.nombre);
+        $('form[id=Actualizar] input[name=username]').val(response.username);
+        $('form[id=Actualizar] input[name=email]').val(response.email);
+        $('form[id=Actualizar] input[name=password]').val(response.contraseña);
+        $('form[id=Actualizar] input[name=cpassword]').val(response.contraseña);
+        $('form[id=Actualizar] input[name=telefono]').val(response.telefono);
       }
     });
+
+    $('#Actualizar').validate({
+      rules: {
+        password: {
+          required: true,
+          minlength: 6
+        },
+        cpassword: {
+          equalTo: "#password"
+        },
+        nombre: {
+          required: true
+        },
+        email: {
+          required: true
+        },
+        username:{
+          required: true
+        },
+        telefono:{
+          required: true
+        }
+      },
+      submitHandler: function() {
+
+        var nombre = $('form[id=Actualizar] input[name=nombre]').val();
+        var email = $('form[id=Actualizar] input[name=email]').val();
+        var username = $('form[id=Actualizar] input[name=username]').val();
+        var password = $('form[id=Actualizar] input[name=password]').val();
+        var telefono = $('form[id=Actualizar] input[name=telefono]').val();
+
+        $.ajax({
+          type: "POST",
+          url: "../../../proyecto/User/actualizar",
+          data: {nombre: nombre, email: email, username: username, password: password, telefono: telefono},
+          success: function (response) {
+            if(response=='1'){
+              location.reload();
+            }else {
+              alert(response);
+            }
+          }
+        });
+      }
+    });
+  });
+
+  $('#nuevoPedido').validate({
+    rules:{
+      tema:{
+        required: true
+      },
+      descripcion:{
+        required: true
+      }
+    },
+    submitHandler: function () {
+      var tema = $('form[name=nuevoPedido] input[name=tema]').val();
+      var descripcion = $('form[name=nuevoPedido] textarea[name=descripcion]').val();
+      var id_detalle = $('input[name=id]').val();
+
+      $.ajax({
+        type: 'POST',
+        url: '../../../proyecto/Pedido/guardar_pedido',
+        data: {tema: tema, descripcion: descripcion, id_detalle: id_detalle},
+        success: function (response) {
+          alert(response);
+          document.location = '../../../proyecto';
+        }
+      });
+    }
   });
 });

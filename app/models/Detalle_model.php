@@ -14,6 +14,7 @@
 				$data['precio']= $response->precio;
 				$data['imagen'] = base64_encode($response->imagen);
 				$data['comprar'] = URL.'Pedido/nuevo/'.$response->id;
+				$data['especificaciones'] = explode(';' , $response->especificaciones);
 				return $data;
 			}else{
 				return '';

@@ -47,6 +47,7 @@ $(document).ready(function() {
 
   $("#inner").on('click','.producto', function (producto) {
     var id = producto.target.id;
+    $('span').remove('.label');
     $.ajax({
       type: "POST",
       data: {id: id},
@@ -57,6 +58,9 @@ $(document).ready(function() {
         $("#ddescripcion").text(response.descripcion);
         $('#dprecio').text('$ '+response.precio);
         $('#imagen').attr('src','data:image/jpeg;base64,'+response.imagen);
+        $.each(response.especificaciones, function (i,value) {
+          $('#esp').append('<span class="label label-info">'+value+'</span>');
+        });
       }
     });
   });

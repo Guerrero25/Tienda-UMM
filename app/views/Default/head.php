@@ -71,7 +71,7 @@
 								<li class="active dropdown">
 									<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="material-icons">account_circle</i> <?php echo Sesion::getSesion('Usuario'); ?></a>
 									<ul class="dropdown-menu">
-										<li><a href="#" id="<?php echo Sesion::getSesion('id'); ?>" name="actualizar">Actuaizar Datos</a></li>
+										<li><a href="#" id="<?php echo Sesion::getSesion('id'); ?>" name="actualizar" data-toggle="modal" data-target="#update">Actuaizar Datos</a></li>
 										<li><a href="<?php echo URL.'User/cerrarSesion';?>">Cerrar Sesion</a></li>
 									</ul>
 								</li>
@@ -205,4 +205,84 @@
 		  </div>
 		</div>
 		<!--Final Modal Inicio de Sesion -->
+<?php }else{ ?>
+	<!--Inicio modal de actualizar datos-->
+	<div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" class="btn btn-info" data-toggle="popover" data-placement="bottom" title="Ayuda" data-content="Iniciar sesión te sirve para realizar pedidos a nuestra tienda, y tener un contacto contigo.">
+						<i class="fa fa-info" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class=" col-md-8 col-md-offset-2">
+							<div class="card card-signup">
+								<!-- Formulario de Actualizar-->
+								<form class="contact-form" role="form" id="Actualizar" name="Actualizar">
+									<div class="hsm header header-primary text-center">
+										<h4>Actualizar Datos</h4>
+									</div>
+										<div class="content">
+											<div class="col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Nombre</label>
+													<input type="text" name="nombre" id="nombre" class="form-control" >
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Username</label>
+													<input type="text" name="username" id="username" class="form-control">
+												</div>
+											</div>
+											<div class=" col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Correo Electrónico</label>
+													<input type="email" name="email" id="email" class="form-control" >
+												</div>
+											</div>
+											<div class=" col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Contraseña</label>
+													<input type="password" name="password" id="password" class="form-control" >
+												</div>
+											</div>
+											<div class=" col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Confirmacion</label>
+													<input type="password" name="cpassword" id="cpassword" class="form-control" >
+												</div>
+											</div>
+											<div class=" col-md-6">
+												<div class="form-group is-empty label-floating">
+													<label class="control-label">Teléfono</label>
+													<input type="number" name="telefono" id="telefono" class="form-control" >
+												</div>
+											</div>
+										</div>
+
+										<div class="footer text-center">
+											<button type="submit" id="btnUpdate" class="btn btn-primary btn-raised">
+												Actualizar
+											</button>
+											<button type="button"class="btn btn-danger btn-raised" data-dismiss="modal">
+												Cancelar
+											</button>
+										</div>
+								 </form>
+								 <br>
+								 <!--Fin Formulario de Actializar-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Final Modal Actualizar Datos-->
 <?php } ?>

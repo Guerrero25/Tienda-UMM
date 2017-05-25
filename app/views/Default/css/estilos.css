@@ -51,6 +51,53 @@
 .modal-content{
   background-color: #E9EBEE;
 }
+
+.options{
+  text-align: center;
+}
+/*Estilos Nuevo Pedido*/
+.data{
+  padding: 10px 10px;
+  vertical-align: middle;
+}
+
+.product{
+  border-radius: 10px;
+  height: 200px;
+  padding: 10px 10px;
+  background-color: #8828A6;
+  vertical-align: middle;
+}
+
+.product .cont img{
+  height: 180px;
+  width: 100%;
+}
+
+.prodcut .informacion {
+  padding: 10px 5px;
+}
+
+.informacion .nombre{
+  font-size: 18px;
+  color: #fff;
+}
+
+.informacion .especificaciones {
+  position: relative;
+  top: 30px;
+  padding: 5px 5px;
+}
+
+.especificaciones h5{
+  text-align: center;
+}
+
+.especificaciones .list .li{
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 13px;
+}
 /*Navegacion de los productos destacados*/
 .col-item
 {
