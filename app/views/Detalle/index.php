@@ -24,7 +24,7 @@
 							<div class="col-md-4 margen-bot">
 								<div class="col-item">
 									<div class="photo">
-										<img src="data:image/jpeg;base64,<?php echo base64_encode($value->imagen); ?>" alt="Detalle 1">
+										<img src="data:image/jpg;base64, <?= base64_encode($value->imagen); ?>" alt="Detalle Imagen">
 									</div>
 									<div class="info">
 										<div class="row">

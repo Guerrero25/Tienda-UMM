@@ -34,6 +34,10 @@
   margin-bottom: 10px;
 }
 
+.margen-top{
+  margin-top: 20px !important;
+}
+
 .cont {
   border-radius: 10px;
   overflow: hidden;
@@ -52,9 +56,25 @@
   background-color: #E9EBEE;
 }
 
+.xdc label{
+  display: inline-block;
+  margin: 5px 5px;
+  padding: 25px 25px;
+  height: 200px;
+  width: 200px;
+  border: 1px solid #000;
+  background-color: white;
+  vertical-align: middle;
+}
+
+.xdc label + input{
+  display: none;
+}
+
 .options{
   text-align: center;
 }
+
 /*Estilos Nuevo Pedido*/
 .data{
   padding: 10px 10px;

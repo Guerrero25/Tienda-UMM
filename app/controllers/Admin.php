@@ -7,10 +7,14 @@ class Admin extends Controller
 {
 
   function index(){
-    if(Sesion::getSesion('Admin') == ''){
-      $this->view->render($this, 'index', '');
+    if(Sesion::getSesion('Usuario') == ''){
+      if(Sesion::getSesion('Admin') == ''){
+        $this->view->render($this, 'index', '');
+      }else{
+        $this->view->render($this, 'pedidos', '');
+      }
     }else {
-      $this->view->render($this, 'pedidos', '');
+      header("Location:".URL);
     }
   }
 
@@ -23,18 +27,19 @@ class Admin extends Controller
     echo $response;
   }
 
-  function nuevo_detalle() {
-    $this->view->render($this, 'nuevo', '');
-  }
-
-  function listar_detalles() {
+  function detalles() {
     $this->view->render($this, 'detalles', '');
   }
+
 
   function pedidos() {
     $this->view->render($this, 'pedidos', '');
   }
 
+  function cerrarSesion() {
+    Sesion::destroy();
+    header("Location:".URL);
+  }
 
 }
 

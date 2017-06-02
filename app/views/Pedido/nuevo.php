@@ -9,14 +9,19 @@
         <div class="row">
             <div class="col-md-6">
               <div class="data">
+                <p>Para confirmar tu pedido primero debes brindarnos informacion.</p>
+
                 <div class="form-group label-floating">
                   <label for="tema" class="control-label">Tema Principal</label>
                   <input class="form-control" type="text" name="tema" id="tema">
                 </div>
-                <div class="form-group label-floating">
-                  <label for="" class="control-label">Descripcion</label>
-                  <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
+                <p>Un tema para el detalle. Ejemplo: Cumpleaños, Aniversario</p>
+
+                <div class="form-group">
+                  <label for="" class="control-label"> Descripcion</label>
+                  <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
                 </div>
+                <p>Una descripcion en donde expliques los deseos y gustos que te gustaria estuvieran plasmados en el detalle. Si no se llena este campo, el detalle sera fabricado como en la foto.</p>
               </div>
             </div>
             <div class="col-md-6">
@@ -40,6 +45,7 @@
                             <b>Tamaño: </b><span>15x15</span>
                           </div>
                         </div>
+                        <b>Precio: </b><span><?= $array->precio ?></span>
                       </div>
                     </div>
                   </div>
@@ -47,21 +53,10 @@
               </div>
             </div>
         </div>
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <h3 class="text-center">Metodos de Pago</h3>
-            <p>Para la realizacion de su pedido debera consignar por lo menos la mitad del pedido para que se empiece a fabricar. Realize su consignacion a la cuenta <strong>661727718182</strong>
-            con la referencia <strong>2142312</strong></p>
-            <div class="price">
-              <h4 class="text text-center ">Total a pagar: $ <?= $array->precio/2; ?></h4>
-            </div>
-            <p>Luego de realizar el pago, debera confirmar su pago enviando una foto del recibo el item de pedidos.</p>
-          </div>
-          <div class="col-md-8 col-md-offset-2">
-            <div class="options">
-              <button type="submit" class="btn btn-primary"><i class="material-icons">favorite</i> Confirmar Pedido</button>
-              <a href="<?= URL.'Detalle/index' ?>" class="btn btn-danger">Cancelar</a>
-            </div>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="options">
+            <button type="submit" class="btn btn-primary"><i class="material-icons">favorite</i> Confirmar Pedido</button>
+            <a href="<?= URL.'Detalle/index' ?>" class="btn btn-danger">Cancelar</a>
           </div>
         </div>
       </form>

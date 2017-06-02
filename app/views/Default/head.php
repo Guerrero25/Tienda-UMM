@@ -35,7 +35,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
         		</button>
-        		<a href="<?php echo isset($_SESSION['Usuario']) ? URL.'Principal/index' : URL.'Main/index'; ?>">
+        		<a href="<?php echo URL.'Main/index'; ?>">
 							<div class="logo-container">
 								<div class="logo">
 									<img src="<?php echo URL.APP_PATH.'views/'.DFT; ?>img/logo.png" alt="Un Millon de Momentos Logo">
@@ -45,15 +45,24 @@
         	</div>
 
         	<div class="collapse navbar-collapse" id="navigation-doc">
+						<?php if(Sesion::getSesion('Admin') == ''){ ?>
             <ul class="nav navbar-nav ">
     					<li><a href="<?php echo URL.'Main/index'; ?>">Inicio</a></li>
-							<li><a href="<?php echo isset($_SESSION['Admin']) ? URL.'Admin/productos' : URL.'Detalle/index'; ?>">Todos</a></li>
+							<li><a href="<?php echo URL.'Detalle/index'; ?>">Todos</a></li>
     	        <li><a href="<?php echo URL.'Detalle/categoria/sorpresas'; ?>">Cajas Sorpresas</a></li>
 							<li><a href="<?php echo URL.'Detalle/categoria/carteles'; ?>">Carteles</a></li>
 							<li><a href="<?php echo URL.'Detalle/categoria/arreglos'; ?>">Arreglos</a></li>
     	    	</ul>
+						<?php }else{ ?>
+							<ul class="nav navbar-nav">
+								<li><a href="<?php echo URL.'Admin/pedidos'; ?>">Gestionar Pedidos</a></li>
+								<li><a href="<?php echo URL.'Admin/detalles'; ?>">Gestionar Detalles</a></li>
+								<li><a href="<?php echo URL.'Admin/cerrarSesion'; ?>">Cerrar Sesion</a></li>
+							</ul>
+						<?php } ?>
             <ul class="nav navbar-nav navbar-right">
-							<?php if(Sesion::getSesion('Usuario') == ''){ ?>
+							<?php if(Sesion::getSesion('Usuario') == ''){  ?>
+								<?php if(Sesion::getSesion('Admin') == ''){ ?>
 							<li>
 								<a href="#" data-toggle="modal" data-target= "#login">Login/Singup</a>
 							</li>
@@ -67,10 +76,12 @@
 									<i class="fa fa-instagram"></i>
 								</a>
 		          </li>
+							<?php } ?>
 							<?php }else{ ?>
 								<li class="active dropdown">
 									<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="material-icons">account_circle</i> <?php echo Sesion::getSesion('Usuario'); ?></a>
 									<ul class="dropdown-menu">
+										<li><a href="<?php echo URL.'Pedido/user';?>">Mis Pedidos</a></li>
 										<li><a href="#" id="<?php echo Sesion::getSesion('id'); ?>" name="actualizar" data-toggle="modal" data-target="#update">Actuaizar Datos</a></li>
 										<li><a href="<?php echo URL.'User/cerrarSesion';?>">Cerrar Sesion</a></li>
 									</ul>
@@ -227,37 +238,37 @@
 									</div>
 										<div class="content">
 											<div class="col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Nombre</label>
 													<input type="text" name="nombre" id="nombre" class="form-control" >
 												</div>
 											</div>
 											<div class="col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Username</label>
 													<input type="text" name="username" id="username" class="form-control">
 												</div>
 											</div>
 											<div class=" col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Correo Electrónico</label>
 													<input type="email" name="email" id="email" class="form-control" >
 												</div>
 											</div>
 											<div class=" col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Contraseña</label>
 													<input type="password" name="password" id="password" class="form-control" >
 												</div>
 											</div>
 											<div class=" col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Confirmacion</label>
 													<input type="password" name="cpassword" id="cpassword" class="form-control" >
 												</div>
 											</div>
 											<div class=" col-md-6">
-												<div class="form-group is-empty label-floating">
+												<div class="form-group is-empty">
 													<label class="control-label">Teléfono</label>
 													<input type="number" name="telefono" id="telefono" class="form-control" >
 												</div>

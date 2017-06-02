@@ -8,8 +8,7 @@ class Pedido extends Controller{
     parent::__construct();
   }
 
-  public function nuevo($id)
-  {
+  public function nuevo($id) {
     if(Sesion::getSesion('Usuario') == ''){
       $this->view->render($this,'login','');
     }else{
@@ -19,15 +18,43 @@ class Pedido extends Controller{
 
   }
 
-  function guardar_pedido()
-  {
+  function guardar_pedido() {
     $tema = $_POST['tema'];
     $descripcion = $_POST['descripcion'];
     $id_detalle = $_POST['id_detalle'];
 
     $response = $this->model->nuevo_pedido($tema, $descripcion, $id_detalle, Sesion::getSesion('id'));
-    echo "Pedido generado exitosamente! con id = ".$response;
+    echo $response;
   }
+
+  function pagar_pedido($id_pedido){
+    $response = $this->model->datos($id_pedido);
+
+    $this->view->render($this, 'pago', $response);
+  }
+
+  function ver() {
+    $response = $this->model->todos_pedidos();
+    echo json_encode($response);
+  }
+
+  function user(){
+    $response = $this->model->pedidos_usuario(Sesion::getSesion('id'));
+    $this->view->render($this, 'user', $response);
+  }
+
+  function pagado($id){
+    $this->model->pagado($id);
+    header("Location: ".URL."Pedido/user");
+  }
+
+  function confirmar(){
+    $id = $_POST['id'];
+    $this->model->confirmar($id);
+    echo 'El pedido a cambiado de estado a *En Proceso*!';
+  }
+
+
 }
 
  ?>

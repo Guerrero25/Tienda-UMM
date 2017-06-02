@@ -136,13 +136,13 @@ $(document).ready(function() {
     });
   });
 
+
+
   $('#nuevoPedido').validate({
     rules:{
       tema:{
-        required: true
-      },
-      descripcion:{
-        required: true
+        required: true,
+        minlength: 7
       }
     },
     submitHandler: function () {
@@ -155,8 +155,13 @@ $(document).ready(function() {
         url: '../../../proyecto/Pedido/guardar_pedido',
         data: {tema: tema, descripcion: descripcion, id_detalle: id_detalle},
         success: function (response) {
-          alert(response);
-          document.location = '../../../proyecto';
+          var confirmacion = confirm('¿Desea realizar su pago ahora??');
+          if(confirmacion == true){
+            document.location = '../../../proyecto/Pedido/pagar_pedido/'+response;
+          }else{
+            document.location = '../../../proyecto/Pedido/user';
+          }
+
         }
       });
     }
