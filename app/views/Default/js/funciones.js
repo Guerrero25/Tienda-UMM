@@ -57,11 +57,12 @@ $(document).ready(function() {
       var email = $('form[id=Registrar] input[name=email]').val();
       var username = $('form[id=Registrar] input[name=username]').val();
       var password = $('form[id=Registrar] input[name=password]').val();
+      var telefono = $('form[id=Registrar] input[name=telefono]').val();
 
       $.ajax({
         type: "POST",
         url: "../../../proyecto/User/registro",
-        data: {nombre: nombre, email: email, username: username, password: password},
+        data: {nombre: nombre, email: email, username: username, password: password, telefono: telefono},
         success: function (response) {
           if(response=='1'){
             location.reload();

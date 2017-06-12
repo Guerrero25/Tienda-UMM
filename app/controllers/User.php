@@ -35,7 +35,7 @@ class User extends Controller{
       $telefono= $_POST['telefono'];
 
       $response = $this->model->login($email,$pass);
-      if($response == ''){
+      if($response != '1'){
         $nuevo = $this->model->nuevoRegistro($nombre,$email,$username,$pass,$telefono);
         $this->crearSesion($nuevo->username, $nuevo->id);
         echo '1';
