@@ -27,6 +27,7 @@ class User extends Controller{
   public function registro()
   {
     if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["nombre"])&& isset($_POST["username"])&& isset($_POST["telefono"])){
+
       $email = ($_POST["email"]);
       $pass = $_POST["password"];
       $nombre = $_POST["nombre"];
@@ -56,10 +57,12 @@ class User extends Controller{
     echo 'Datos Actualizados Exitosamente!';
   }
 
+
   function crearSesion($user, $id){
     Sesion::setSesion('Usuario', $user);
     Sesion::setSesion('id', $id);
   }
+
 
   function cerrarSesion(){
     Sesion::destroy();
